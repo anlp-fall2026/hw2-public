@@ -466,8 +466,9 @@ development scores and the leaderboard scores measure different question sets, s
 separate columns of your results table and never average the two.
 
 \vspace{0.5em}
-\noindent Use your leaderboard submissions sparingly, to sanity-check your best one or two systems
-against questions you did not write yourself.
+\noindent Use your leaderboard submissions sparingly. Once your ablations are done, submit
+predictions from the systems that scored best on the public evaluation data and on any test data you
+built yourself, to check them against questions you did not write.
 
 \subsec{Unseen test set}
 
@@ -598,7 +599,12 @@ the course grading policy.\footnote{Grading policy: \url{https://cmu-anlp.org/sy
       \item \textbf{Results (10 points)}: report raw numbers from your experiments. Please include the
         following details:
         \begin{itemize}[nosep, leftmargin=1.4em]
-          \item What was the result of each model that you tried on the public leaderboard?
+          \item What was the result of each system variant you tried, measured on
+            \texttt{public\_evaluation\_data.json} and on any development or test data you built
+            yourself? Say which set each number comes from and how many questions it covers.
+          \item For the systems whose predictions you submitted to the leaderboard, what score did
+            they receive? You have at most 10 submissions, so we do not expect a leaderboard score
+            for every variant.
         \end{itemize}
       \item \textbf{Analysis (10 points)}: perform quantitative/qualitative analysis and present your
         findings:

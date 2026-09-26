@@ -149,29 +149,35 @@ answers factual questions about Pittsburgh and Carnegie Mellon University.
 %======================================================================
 \section{Results}
 \label{sec:results}
-% 10 points. Report the raw numbers, including the score of every system you
-% submitted to the public leaderboard. State which system produced each of the
+% 10 points. Report the raw numbers for every system variant you tried, measured
+% on public_evaluation_data.json and on any development or test data you built
+% yourself. Add the leaderboard score for the systems whose predictions you
+% submitted there; with 10 submissions you will not have one for every variant,
+% and that is expected. State which system produced each of the
 % system_output_{1,2,3}.json files you submitted.
 
 % \begin{table}[t]
 %   \centering
-%   \begin{tabular}{lrrrr}
+%   \begin{tabular}{lrrrrr}
 %     \toprule
-%     System & Recall & F1 & ROUGE-L & Judge \\
+%     & \multicolumn{4}{c}{Public eval (157 q)} & Leaderboard \\
+%     \cmidrule(lr){2-5}
+%     System & Recall & F1 & ROUGE-L & Judge & Total \\
 %     \midrule
-%     Closed-book      & & & & \\
-%     Dense only       & & & & \\
-%     Sparse only      & & & & \\
-%     Hybrid (final)   & & & & \\
+%     Closed-book      & & & & & -- \\
+%     Dense only       & & & & & -- \\
+%     Sparse only      & & & & & -- \\
+%     Hybrid (final)   & & & & & \\
 %     \bottomrule
 %   \end{tabular}
-%   \caption{Leaderboard results for each system we submitted.}
+%   \caption{Results on the public evaluation set, with leaderboard scores for the
+%            systems we submitted.}
 %   \label{tab:results}
 % \end{table}
 
-% Say which split each number comes from. Leaderboard scores and numbers from
-% your own held-out set are not comparable, so do not put them in one column
-% without labeling them.
+% Say which set each number comes from and how many questions it covers.
+% Leaderboard scores and numbers from your own held-out set measure different
+% questions, so keep them in separate columns and never average the two.
 
 %======================================================================
 \section{Analysis}

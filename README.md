@@ -201,7 +201,7 @@ The leaderboard is **not** the place to run your ablations: you have at most 10 
 
 Instead, run every comparison locally against ``public_evaluation_data.json``, which ships with reference answers for exactly this purpose. If you annotate your own questions (see [Training data](#training-data)), holding out a portion of them gives you a second development set; never train, tune, or prompt-select on whatever you report as held-out. Report how many questions each number is computed over. Your development scores and the leaderboard scores measure different question sets, so keep them in separate columns of your results table and never average the two.
 
-Use your leaderboard submissions sparingly, to sanity-check your best one or two systems against questions you did not write yourself.
+Use your leaderboard submissions sparingly. Once your ablations are done, submit predictions from the systems that scored best on the public evaluation data and on any test data you built yourself, to check them against questions you did not write.
 
 ### Unseen test set
 
@@ -281,7 +281,8 @@ The following points (max. 100 points) are derived from the results and your rep
     - What kind of methods (including baselines) did you try? Explain at least two variations (more is welcome). This can include variations of models, which data it was trained on, training strategy, embedding models, retrievers, re-rankers, etc.
     - What was your justification for trying these methods?
   - **Results** (10 points): report raw numbers from your experiments. Please include the following details:
-    - What was the result of each model that you tried on the public leaderboard?
+    - What was the result of each system variant you tried, measured on ``public_evaluation_data.json`` and on any development or test data you built yourself? Say which set each number comes from and how many questions it covers.
+    - For the systems whose predictions you submitted to the leaderboard, what score did they receive? You have at most 10 submissions, so we do not expect a leaderboard score for every variant.
   - **Analysis** (10 points): perform quantitative/qualitative analysis and present your findings:
     - Perform a comparison of the outputs on a more fine-grained level than just holistic accuracy numbers, and report the results. For instance, how did your models perform across various types of questions?
     - Report your results across at least two variations you tried, including variations of models, which data it was trained on, training strategy, embedding models, retrievers, re-rankers, etc.
