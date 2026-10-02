@@ -531,7 +531,14 @@ your report.
 \problem{Submission \& Grading}
 
 \begin{deliverables}{SUBMISSION CHECKLIST}
-Submit all deliverables on Gradescope:
+There are \textbf{two Gradescope submissions}, both due at the deadline above:
+\begin{itemize}[nosep, leftmargin=1.6em]
+  \item \textbf{Assignment2: Report} --- \texttt{report.pdf}, built from the ACL template.
+  \item \textbf{Assignment2: Code} --- a zip containing your code link, system outputs, and
+    (optionally) your annotated training data.
+\end{itemize}
+\vspace{0.4em}
+Between them you must turn in:
 \begin{itemize}[nosep, leftmargin=1.6em]
   \item Your report.
   \item A link to your GitHub repository containing your code.\footnote{Create a private GitHub repo
@@ -542,13 +549,12 @@ Submit all deliverables on Gradescope:
 \end{itemize}
 \end{deliverables}
 
-\noindent Your submission should be a zip file with the following structure (assuming the lowercase
-Andrew ID is \texttt{ANDREWID}).
+\noindent The zip you upload to \textbf{Assignment2: Code} should have the following structure
+(assuming the lowercase Andrew ID is \texttt{ANDREWID}).
 
 \begin{codebox}
 \begin{verbatim}
 ANDREWID/
-|-- report.pdf
 |-- github.txt
 |-- data/
 |   |-- train (optional)/
@@ -561,6 +567,14 @@ ANDREWID/
 |-- README.md
 \end{verbatim}
 \end{codebox}
+
+\noindent Do not put \texttt{report.pdf} inside the zip; it is graded on its own Gradescope
+assignment.
+
+\vspace{0.5em}
+\noindent\textcolor{red}{\textbf{A code submission without \texttt{system\_outputs/} will be marked
+incomplete.}} Your system outputs are what the 30 results points are scored on, so a zip that
+contains only code and a GitHub link cannot be graded.
 
 \subsec{Grading}
 
@@ -635,8 +649,9 @@ the course grading policy.\footnote{Grading policy: \url{https://cmu-anlp.org/sy
   \item You are only allowed to use models that are also accessible through
     \href{https://huggingface.co/models}{HuggingFace}. This means you may not use closed models like
     OpenAI models, but you can opt to use a hosting service for an open model (such as the Hugging
-    Face or Together APIs). \textbf{The model must have been released before January 1, 2025, and its
-    size must not exceed 32B parameters}.
+    Face or Together APIs). \textbf{The model must have been released before January 1, 2026, and must
+    not exceed 32B total parameters}. For mixture-of-experts models this is the total parameter
+    count across all experts, not the active count per token.
   \item You are only allowed to include publicly available data in your knowledge resource and
     training data.
   \item You are welcome to use any open-source library to assist your data annotation and model
@@ -675,6 +690,12 @@ credit in your report. These are considered basic utilities rather than high-lev
 A: For any date-based questions specifically about events, we will only ask about events taking
 place from October 2026 onward; every question with a specific date falls on or after October 22,
 2026. Annual and recurring events are also in scope.
+
+\vspace{0.6em}
+\noindent\textbf{Q: ``Can I use a mixture-of-experts model?''}\\
+A: Yes, as long as its \textbf{total} parameter count is at most 32B. We count total rather than
+active parameters because you still have to load every expert, which is what limits what will run on
+the hardware most of you have.
 
 \vspace{0.6em}
 \noindent\textbf{Q: ``Can I use any closed-source models (OpenAI, Claude, etc.)?''}\\

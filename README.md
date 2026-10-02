@@ -241,18 +241,22 @@ Make sure you cite all your sources (open-source models, libraries, papers, blog
 
 ### Submission
 
-Submit all deliverables on **Gradescope**. Your submission checklist is below:
+There are **two Gradescope submissions**, both due at the deadline above:
+
+- **Assignment2: Report** — `report.pdf`, built from the ACL template.
+- **Assignment2: Code** — a zip containing your code link, system outputs, and (optionally) your annotated training data.
+
+Your submission checklist is below:
 
 - [ ] Your report.
 - [ ] A link to your GitHub repository containing your code.[^3]
 - [ ] (optionally) training data you annotated for this assignment.
 - [ ] Your system outputs on our test set.
 
-Your submission should be a zip file with the following structure (assuming the lowercase Andrew ID is ANDREWID).
+The zip you upload to **Assignment2: Code** should have the following structure (assuming the lowercase Andrew ID is ANDREWID).
 
 ```
 ANDREWID/
-├── report.pdf
 ├── github.txt
 ├── data/
 │   ├── train (optional)/
@@ -264,6 +268,10 @@ ANDREWID/
 │   ├── system_output_3.json (optional)
 └── README.md
 ```
+
+Do not put `report.pdf` inside the zip; it is graded on its own Gradescope assignment.
+
+**A code submission without `system_outputs/` will be marked incomplete.** Your system outputs are what the 30 results points are scored on, so a zip that contains only code and a GitHub link cannot be graded.
 
 ### Grading
 
@@ -294,7 +302,7 @@ The following points (max. 100 points) are derived from the results and your rep
 
 To make the assignment accessible to everyone:
 
-- You are only allowed to use models that are also accessible through [HuggingFace](https://huggingface.co/models). This means you may not use closed models like OpenAI models, but you can opt to use a hosting service for an open model (such as the Hugging Face or Together APIs). **The model must have been released before January 1, 2025, and its size must not exceed 32B parameters**.
+- You are only allowed to use models that are also accessible through [HuggingFace](https://huggingface.co/models). This means you may not use closed models like OpenAI models, but you can opt to use a hosting service for an open model (such as the Hugging Face or Together APIs). **The model must have been released before January 1, 2026, and must not exceed 32B total parameters**. For mixture-of-experts models this is the total parameter count across all experts, not the active count per token.
 - You are only allowed to include publicly available data in your knowledge resource and training data.
 - You are welcome to use any open-source library to assist your data annotation and model training. For data annotation, you can use tools like Label Studio, Doccano, or similar annotation platforms to create your question-answer pairs efficiently. For model development, you can use standard ML libraries like scikit-learn, PyTorch, or HuggingFace Transformers for any model training, fine-tuning, or evaluation tasks. Make sure you check the license and provide due credit for all tools used.
 
@@ -313,6 +321,9 @@ A: You can use standard libraries like Selenium, Beautiful Soup, requests, pdfmi
 
 **Q: "What is the date range I should consider for event-based questions?"**  
 A: For any date-based questions specifically about events, we will only ask about events taking place from October 2026 onward; every question with a specific date falls on or after October 22, 2026. Annual and recurring events are also in scope.
+
+**Q: "Can I use a mixture-of-experts model?"**  
+A: Yes, as long as its **total** parameter count is at most 32B. We count total rather than active parameters because you still have to load every expert, which is what limits what will run on the hardware most of you have.
 
 **Q: "Can I use any closed-source models (OpenAI, Claude, etc.)?"**  
 A: No. You cannot use any closed-source models for any part of the assignment, including embeddings, retrieval, or generation. All models must be open-weight and available through HuggingFace or similar open platforms.
