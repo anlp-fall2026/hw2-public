@@ -241,7 +241,7 @@ Make sure you cite all your sources (open-source models, libraries, papers, blog
 
 ### Submission
 
-Submit all deliverables on Canvas. Your submission checklist is below:
+Submit all deliverables on Gradescope. Your submission checklist is below:
 
 - [ ] Your report.
 - [ ] A link to your GitHub repository containing your code.[^3]
