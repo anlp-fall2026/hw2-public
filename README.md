@@ -169,7 +169,14 @@ Note that this is **not** the leaderboard set. The leaderboard uses a different 
 
 ### Public leaderboard
 
-**The leaderboard is not live yet — we will post the leaderboard link along with queries (without answers) on Piazza as soon as it is released.**
+The leaderboard is live at https://huggingface.co/spaces/macabdul9/ANLP_F26_HW2_Leaderboard. Its 150 queries (without answers) are in ``leaderboard_queries.json`` in this repo:
+
+```json
+{
+    "id": "1",
+    "question": "What accession number does the Carnegie Museum of Art list for the painting “Flowers in Green Vase”?"
+}
+```
 
 For this leaderboard:
 - The queries are **different from** those in ``public_evaluation_data.json``. Scoring well on the public evaluation data does not guarantee the same score here.
